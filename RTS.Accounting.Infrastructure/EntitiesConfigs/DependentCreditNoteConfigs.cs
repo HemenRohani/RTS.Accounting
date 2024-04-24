@@ -8,7 +8,7 @@ namespace RTS.Accounting.Infrastructure.EntitiesConfigs
     {
         public void Configure(EntityTypeBuilder<DependentCreditNote> builder)
         {
-            builder.HasOne(x => x.ParentInvoice).WithMany(x => x.CreditNotes).HasForeignKey(x => x.ParentInvoiceId);
+            builder.HasOne(x => x.ParentInvoice).WithMany(x => x.CreditNotes).HasForeignKey(x => x.ParentInvoiceId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

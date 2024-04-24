@@ -90,7 +90,7 @@ namespace RTS.Accounting.Infrastructure.Migrations
                     b.HasOne("RTS.Accounting.Domain.Entities.InvoiceDocument", "ParentInvoice")
                         .WithMany("CreditNotes")
                         .HasForeignKey("ParentInvoiceId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("ParentInvoice");

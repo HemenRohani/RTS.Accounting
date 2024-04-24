@@ -1,0 +1,52 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>Manage Documnts</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <button class="btn btn-primary" (click)="AddDependentCreditNote()">
+              <i class='fas fa-plus-circle'></i><span> Dependent Credit Note</span>
+            </button>
+            <button class="btn btn-primary" (click)="AddIndependentCreditNote()">
+              <i class='fas fa-plus-circle'></i><span> Independent Credit Note</span>
+            </button>
+            <button class="btn btn-primary" (click)="AddInvoiceDocument()">
+              <i class='fas fa-plus-circle'></i><span> Invoice Document</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover table-bordered table-content" *ngIf="documents">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Number</th>
+            <th>External Invoice Number</th>
+            <th>Status</th>
+            <th>Total Amount</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let document of documents">
+            <td>{{ document.type }}</td>
+            <td>{{ document.number }}</td>
+            <td>{{ document.externalInvoiceNumber }}</td>
+            <td>{{ document.status }}</td>
+            <td>{{ document.totalAmount }}</td>
+            <td>
+              <!--<a href="#" [routerLink]="['/ViewEmployee/', employee.id]" class="btn"><i class='fas fa-eye view'></i></a>
+              <a href="#" [routerLink]="['/EditEmployee/', employee.id]" class="btn"><i class="fa fa-edit edit"></i></a>-->
+              <button type="button" (click)="deleteDocumentConfirmation(document)" class="btn">
+                <i class='fas fa-trash-alt delete'></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

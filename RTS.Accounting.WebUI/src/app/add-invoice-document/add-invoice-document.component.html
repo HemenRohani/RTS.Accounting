@@ -1,0 +1,94 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>New Invoice Document</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" routerLink="/Home" class="btn btn-success back">
+              <i class='fas fa-arrow-circle-left'></i>
+              &nbsp;Back
+            </a>
+          </div>
+        </div>
+      </div>
+      <form #invoiceDocumentForm="ngForm">
+        <div class="table-content">
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="Number" class="p-t-b-10">Number<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="Number" required maxlength="10"
+                     [(ngModel)]="addInvoiceDocumentForm.Number" name="Number" #Number="ngModel" pattern="^\d{10}$">
+              <div *ngIf="Number.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!Number.errors?.['required']">
+                  Number is required
+                </div>
+                <div [hidden]="!Number.errors?.['touched'] && !Number.errors?.['pattern']">
+                  Numer is invalid(10 digits)
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="ExternalInvoiceNumber" class="p-t-b-10">External Invoice Number<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="ExternalInvoiceNumber" required maxlength="10" pattern="^\w{10}$"
+                     [(ngModel)]="addInvoiceDocumentForm.ExternalInvoiceNumber" name="ExternalInvoiceNumber" #ExternalInvoiceNumber="ngModel">
+              <div *ngIf="ExternalInvoiceNumber.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!ExternalInvoiceNumber.errors?.['required']">
+                  External Invoice Number is required
+                </div>
+                <div [hidden]="!ExternalInvoiceNumber.errors?.['touched'] && !ExternalInvoiceNumber.errors?.['pattern']">
+                  External Invoice Number is invalid(10 characters or digit)
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="Status" class="p-t-b-10">Status<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <select class="form-control" id="Status" required
+                      [(ngModel)]="addInvoiceDocumentForm.Status" name="Status" #Status="ngModel">
+                <option value="0">Waiting To Approve</option>
+                <option value="1">Approved</option>
+              </select>
+              <div *ngIf="Status.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!Status.errors?.['required']">
+                  Status is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10">Total Amount<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" id="TotalAmount" required min="1"
+                     [(ngModel)]="addInvoiceDocumentForm.TotalAmount" name="TotalAmount" #TotalAmount="ngModel">
+              <div *ngIf="TotalAmount.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!TotalAmount.errors?.['required']">
+                  Total Amount is required
+                </div>
+                <div [hidden]="!TotalAmount.errors?.['touched'] && !TotalAmount.errors?.['min']">
+                  Total Amount must be greater than 0
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table-footer">
+          <button class="btn btn-success" (click)="AddInvoiceDocument(invoiceDocumentForm.form.valid)">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -11,8 +11,8 @@ using RTS.Accounting.Infrastructure;
 namespace RTS.Accounting.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240424071323_InitDb")]
-    partial class InitDb
+    [Migration("20240424145004_DbInit")]
+    partial class DbInit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,7 +93,7 @@ namespace RTS.Accounting.Infrastructure.Migrations
                     b.HasOne("RTS.Accounting.Domain.Entities.InvoiceDocument", "ParentInvoice")
                         .WithMany("CreditNotes")
                         .HasForeignKey("ParentInvoiceId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("ParentInvoice");

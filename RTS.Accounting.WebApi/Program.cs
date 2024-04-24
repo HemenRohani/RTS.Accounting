@@ -25,6 +25,9 @@ internal class Program
     // Configure the HTTP request pipeline.
     private static void ConfigureMiddlewares(WebApplication app)
     {
+        app.UseDefaultFiles();
+        app.UseStaticFiles();
+
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
@@ -34,5 +37,8 @@ internal class Program
         app.UseAuthorization();
 
         app.MapControllers();
+
+        app.UseStaticFiles();
+
     }
 }

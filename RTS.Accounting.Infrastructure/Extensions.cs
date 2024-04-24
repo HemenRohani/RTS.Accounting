@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using RTS.Accounting.Application;
-using RTS.Accounting.Application.Interfaces;
+using RTS.Accounting.Domain.Interfaces;
 using RTS.Accounting.Domain.Repositories;
 using RTS.Accounting.Infrastructure.Repositories;
 
@@ -21,6 +20,7 @@ namespace RTS.Accounting.Infrastructure
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IDocumentRepository, DocumentRepository>();
+            services.AddScoped<IInvoiceDocumentRepository, InvoiceDocumentRepository>();
 
             return services;
         }

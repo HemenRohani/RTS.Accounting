@@ -5,7 +5,7 @@
 namespace RTS.Accounting.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDb : Migration
+    public partial class DbInit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,8 +30,7 @@ namespace RTS.Accounting.Infrastructure.Migrations
                         name: "FK_BaseDocuments_BaseDocuments_ParentInvoiceId",
                         column: x => x.ParentInvoiceId,
                         principalTable: "BaseDocuments",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(

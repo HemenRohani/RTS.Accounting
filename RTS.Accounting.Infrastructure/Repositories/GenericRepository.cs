@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RTS.Accounting.Application;
 using RTS.Accounting.Domain.Common;
 
 namespace RTS.Accounting.Infrastructure.Repositories
@@ -26,14 +25,14 @@ namespace RTS.Accounting.Infrastructure.Repositories
             _appDbContext.Remove(entity);
         }
 
-        public async Task<TEntity> GetAsync(int id)
+        public async Task<TEntity> GetAsync(int id, CancellationToken cancellationToken)
         {
-            return await _appDbContext.FindAsync<TEntity>(id);
+            return await _appDbContext.FindAsync<TEntity>(id, cancellationToken);
         }
 
-        public async Task<List<TEntity>> GetAllAsync()
+        public async Task<List<TEntity>> GetAllAsync(CancellationToken cancellationToken)
         {
-            return await _appDbContext.Set<TEntity>().ToListAsync();
+            return await _appDbContext.Set<TEntity>().ToListAsync(cancellationToken);
         }
     }
 }

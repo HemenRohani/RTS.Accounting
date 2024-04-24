@@ -4,6 +4,8 @@ namespace RTS.Accounting.Domain.Repositories
 {
     public interface IDocumentRepository
     {
-        Task<BaseDocument> GetAsync(int id);
+        void Remove(BaseDocument entity);
+        Task<BaseDocument> GetAsync(int id, CancellationToken cancellationToken);
+        Task<List<BaseDocument>> GetAllAsync(CancellationToken cancellationToken = default);
     }
 }

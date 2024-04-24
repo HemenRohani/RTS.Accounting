@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Accounting.Domain", "RTS.Accounting.Domain\RTS.Accounting.Domain.csproj", "{4826B179-1943-4FEB-BF53-0C6F70E4F977}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTS.Accounting.Domain", "RTS.Accounting.Domain\RTS.Accounting.Domain.csproj", "{4826B179-1943-4FEB-BF53-0C6F70E4F977}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Accounting.Infrastructure", "RTS.Accounting.Infrastructure\RTS.Accounting.Infrastructure.csproj", "{E5FE480E-A36C-4A4B-9F11-AD0BC2E9366F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTS.Accounting.Infrastructure", "RTS.Accounting.Infrastructure\RTS.Accounting.Infrastructure.csproj", "{E5FE480E-A36C-4A4B-9F11-AD0BC2E9366F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Accounting.Application", "RTS.Accounting.Application\RTS.Accounting.Application.csproj", "{E5BABE2B-6A5B-4D1F-9FDC-94BA7ED54EBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTS.Accounting.Application", "RTS.Accounting.Application\RTS.Accounting.Application.csproj", "{E5BABE2B-6A5B-4D1F-9FDC-94BA7ED54EBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Accounting.WebApi", "RTS.Accounting.WebApi\RTS.Accounting.WebApi.csproj", "{DEE46EE4-BA5A-416F-B4DF-BEFFEE458289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTS.Accounting.WebApi", "RTS.Accounting.WebApi\RTS.Accounting.WebApi.csproj", "{DEE46EE4-BA5A-416F-B4DF-BEFFEE458289}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "RTS.Accounting.WebUI", "RTS.Accounting.WebUI\RTS.Accounting.WebUI.esproj", "{B9A0BED7-D34B-4F25-A2EE-00C5792746E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{DEE46EE4-BA5A-416F-B4DF-BEFFEE458289}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEE46EE4-BA5A-416F-B4DF-BEFFEE458289}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEE46EE4-BA5A-416F-B4DF-BEFFEE458289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A0BED7-D34B-4F25-A2EE-00C5792746E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A0BED7-D34B-4F25-A2EE-00C5792746E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A0BED7-D34B-4F25-A2EE-00C5792746E7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B9A0BED7-D34B-4F25-A2EE-00C5792746E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A0BED7-D34B-4F25-A2EE-00C5792746E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A0BED7-D34B-4F25-A2EE-00C5792746E7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
