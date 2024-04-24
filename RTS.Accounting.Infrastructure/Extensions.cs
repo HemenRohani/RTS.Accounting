@@ -21,6 +21,8 @@ namespace RTS.Accounting.Infrastructure
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IDocumentRepository, DocumentRepository>();
             services.AddScoped<IInvoiceDocumentRepository, InvoiceDocumentRepository>();
+            services.AddScoped<IIndependentCreditNoteRepository, IndependentCreditNoteRepository>();
+            services.AddScoped<IDependentCreditNoteRepository, DependentCreditNoteRepository>();
 
             return services;
         }

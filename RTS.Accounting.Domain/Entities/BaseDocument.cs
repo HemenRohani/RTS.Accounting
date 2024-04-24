@@ -1,5 +1,6 @@
 ﻿using RTS.Accounting.Domain.Common;
 using RTS.Accounting.Domain.Enums;
+using System.Text.RegularExpressions;
 
 namespace RTS.Accounting.Domain.Entities
 {

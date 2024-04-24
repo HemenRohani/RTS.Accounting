@@ -26,6 +26,7 @@ export class AddInvoiceDocumentComponent implements OnInit {
   AddInvoiceDocument(isValid: any) {
     this.isSubmitted = true;
     if (isValid) {
+      this.addInvoiceDocumentForm.Status = Number.parseInt(this.addInvoiceDocumentForm.Status.toString());
       this.http.post('/document/addInvoiceDocument', this.addInvoiceDocumentForm).subscribe(async data => {
         this.toastr.success("Succesfuly Added.");
         setTimeout(() => {

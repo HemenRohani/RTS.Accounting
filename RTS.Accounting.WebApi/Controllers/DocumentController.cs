@@ -42,6 +42,20 @@ namespace RTS.Accounting.WebApi.Controllers
             return await _mediator.Send(addInvoiceDocumentCommand, cancellation);
         }
 
-        
+        [HttpPost("addIndependentCreditNote")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<Unit> AddInvoiceDocument([FromBody] AddIndependentCreditNoteCommand addIndependentCreditNoteCommand, CancellationToken cancellation)
+        {
+            return await _mediator.Send(addIndependentCreditNoteCommand, cancellation);
+        }
+
+        [HttpPost("addDependentCreditNote")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<Unit> AddInvoiceDocument([FromBody] AddDependentCreditNoteCommand addDependentCreditNoteCommand, CancellationToken cancellation)
+        {
+            return await _mediator.Send(addDependentCreditNoteCommand, cancellation);
+        }
+
+
     }
 }
