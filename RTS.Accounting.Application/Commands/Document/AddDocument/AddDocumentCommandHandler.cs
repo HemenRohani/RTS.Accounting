@@ -10,8 +10,9 @@ namespace RTS.Accounting.Application.Commands.Document.AddDocument
         private readonly IDocumentRepository _documentRepository = documentRepository;
         public async Task<Unit> Handle(AddDocumentCommand request, CancellationToken cancellationToken)
         {
-            _documentRepository.Add(new Domain.Entities.Document { });
-            await _unitOfWork.SaveChangesAsync();
+
+                //_documentRepository.get(new Domain.Entities.BaseDocument { });
+                //await _unitOfWork.SaveChangesAsync();
 
             return Unit.Value;
         }

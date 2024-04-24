@@ -2,17 +2,25 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RTS.Accounting.Application;
+using RTS.Accounting.Application.Interfaces;
+using RTS.Accounting.Domain.Repositories;
+using RTS.Accounting.Infrastructure.Repositories;
 
 
 namespace RTS.Accounting.Infrastructure
 {
     public static class Extensions
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
-            string appDataBaseConnectionString = configuration.GetConnectionString("AppDataBaseConnectionString");
+            string dbConnectionString = configuration.GetConnectionString("DatabaseConnectionString");
 
-            services.AddDbContext<AppDbContext>(ctx => ctx.UseSqlServer(appDataBaseConnectionString));
+            services.AddDbContext<AppDbContext>(options =>
+             options.UseSqlServer(dbConnectionString,
+                 builder => builder.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IDocumentRepository, DocumentRepository>();
 
             return services;
         }

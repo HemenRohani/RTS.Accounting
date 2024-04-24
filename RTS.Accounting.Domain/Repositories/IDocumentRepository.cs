@@ -4,7 +4,6 @@ namespace RTS.Accounting.Domain.Repositories
 {
     public interface IDocumentRepository
     {
-        void Add(Document document);
-        Task<Document> GetAsync(int id);
+        Task<BaseDocument> GetAsync(int id);
     }
 }
