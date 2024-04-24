@@ -2,7 +2,7 @@
 {
     public class DependentCreditNote : BaseDocument
     {
-        /// not empty and  < 0
-        public long TotalAmount { get; set; }
+        public int ParentInvoiceId { get; set; }
+        public InvoiceDocument ParentInvoice { get; set; }
     }
 }

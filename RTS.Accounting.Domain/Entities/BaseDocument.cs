@@ -10,6 +10,6 @@ namespace RTS.Accounting.Domain.Entities
         /// not empty and 10 char
         public string ExternalInvoiceNumber { get; set; }
         public DocumentStatus Status { get; set; }
-
+        public long TotalAmount { get; set; }
     }
 }

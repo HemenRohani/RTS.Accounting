@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RTS.Accounting.Domain.Entities;
-using RTS.Accounting.Domain.Enums;
 using RTS.Accounting.Infrastructure.EntitiesConfigs;
 
 namespace RTS.Accounting.Infrastructure
@@ -15,6 +14,7 @@ namespace RTS.Accounting.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new BaseDocumentConfigs());
+            modelBuilder.ApplyConfiguration(new DependentCreditNoteConfigs());
         }
     }
 }

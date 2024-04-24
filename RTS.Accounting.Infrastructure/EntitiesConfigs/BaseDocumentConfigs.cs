@@ -15,7 +15,7 @@ namespace RTS.Accounting.Infrastructure.EntitiesConfigs
                     .HasValue<IndependentCreditNote>(DocumentType.IndependentCreditNote)
                     .HasValue<DependentCreditNote>(DocumentType.DependentCreditNote);
 
-            builder.Property(x => x.Number).hasc.IsRequired().HasMaxLength(10).IsUnicode(false);
+            builder.Property(x => x.Number).IsRequired().HasMaxLength(10).IsUnicode(false);
             builder.Property(x => x.ExternalInvoiceNumber).IsRequired().HasMaxLength(10).IsUnicode(false);
         }
     }
